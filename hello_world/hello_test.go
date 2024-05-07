@@ -6,17 +6,27 @@ import (
 
 func TestHello(t *testing.T) {
 	t.Run("saying hello to people", func(t *testing.T) {
-		got := Hello("David")
+		got := Hello("David", "English")
 		want := "Hello, David"
 		assertCorrectMessage(t, got, want)
-
 	})
 
 	t.Run("say 'Hello World' when an empty string is supplied", func(t *testing.T) {
-		got := Hello("")
+		got := Hello("", "")
 		want := "Hello, world"
 		assertCorrectMessage(t, got, want)
+	})
 
+	t.Run("in Spanish", func(t *testing.T) {
+		got := Hello("Elodie", "Spanish")
+		want := "Hola, Elodie"
+		assertCorrectMessage(t, got, want)
+	})
+
+	t.Run("in French", func(t *testing.T) {
+		got := Hello("Pierre", "French")
+		want := "Bonjour, Pierre"
+		assertCorrectMessage(t, got, want)
 	})
 }
 
@@ -42,4 +52,9 @@ func assertCorrectMessage(t testing.TB, got, want string) {
 		tells test code to fail if needed
 
    t.Helper() tells the test suite that this method is a test helper
+   function name start with a lowercase letter
+   public functions start with a capital letter
+
+   constants can be grouped in a block instead of individually called
+
 */
