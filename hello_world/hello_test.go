@@ -1,11 +1,27 @@
 package main
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestHello(t *testing.T) {
-	got := Hello("David")
-	want := "Hello, David"
+	t.Run("saying hello to people", func(t *testing.T) {
+		got := Hello("David")
+		want := "Hello, David"
+		assertCorrectMessage(t, got, want)
 
+	})
+
+	t.Run("say 'Hello World' when an empty string is supplied", func(t *testing.T) {
+		got := Hello("")
+		want := "Hello, world"
+		assertCorrectMessage(t, got, want)
+
+	})
+}
+
+func assertCorrectMessage(t testing.TB, got, want string) {
+	t.Helper()
 	if got != want {
 		t.Errorf("got %q want %q", got, want)
 	}
@@ -21,4 +37,9 @@ func TestHello(t *testing.T) {
 		f allows you to format your error message
 		%q used as placeholder for variables
 		for test %q is helpful as it wraps your values in double quotes ""
+
+   testing.TB satisfies both testing t and testing b
+		tells test code to fail if needed
+
+   t.Helper() tells the test suite that this method is a test helper
 */
