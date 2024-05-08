@@ -21,11 +21,9 @@ func ExampleAdd() {
 }
 
 /*
-	--'%d' is used to format integers instead of %q for strings
-	--Testable functions begin with Example
-		(much like test functions begin with Test),
-		and reside in a package's _test.go files
-
-
-
+NOTE:
+--'%d' is used to format integers instead of %q for strings
+--Testable functions begin with Example
+	(much like test functions begin with Test),
+	and reside in a package's _test.go files
 */

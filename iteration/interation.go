@@ -3,11 +3,11 @@ package iteration
 func Repeat(character string) string {
 	var repeated string
 
-	/* For loop pre 1.22
-
-	for i := 0; i < 5; i++ {
-		repeated += character
-	}
+	/*
+		NOTE: For loop pre 1.22
+		for i := 0; i < 5; i++ {
+			repeated += character
+		}
 	*/
 
 	// For loop 1.22 and later
